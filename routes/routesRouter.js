@@ -1,23 +1,24 @@
 import express from "express";
 import { addroute, viewroute,viewAllroutes, updateroute, deleteroute } from '../controllers/routesController.js'
-// import { authenticate } from '../middlewares/auth.js';
+import { authenticate } from "../middlewares/auth.js";
+
 
 const routesRouter = express.Router();
 
 //Add a route
-routesRouter.post("/", addroute);
+routesRouter.post("/", authenticate ,addroute);
 
 //View a route routes/:id
-routesRouter.get("/:id",  viewroute);
+routesRouter.get("/:id",  authenticate,viewroute);
 
 //View all routes routes/
-routesRouter.get("/",  viewAllroutes);
+routesRouter.get("/",  authenticate,viewAllroutes);
 
 //Update a route routes/
-routesRouter.put("/",  updateroute);
+routesRouter.put("/",  authenticate,updateroute);
 
 //Delete a route routes/:id
-routesRouter.delete("/:id",  deleteroute);
+routesRouter.delete("/:id",  authenticate,deleteroute);
 // view premises on route/
 
 export default routesRouter;

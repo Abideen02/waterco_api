@@ -1,23 +1,23 @@
 import express from "express";
 import { addPremise, viewAllPremises, updatePremise, viewMemberPremises, viewPremise } from '../controllers/premisesController.js'
-// import { authenticate } from '../middlewares/auth.js';
+import { authenticate } from '../middlewares/auth.js';
 
 const premisesRouter = express.Router();
 
 // Create premises/
-premisesRouter.post("/", addPremise);
+premisesRouter.post("/", authenticate ,addPremise);
 
 // View a premise/:id
-premisesRouter.get("/:id", viewPremise);
+premisesRouter.get("/:id", authenticate,viewPremise);
 
 // View all premises/
-premisesRouter.get("/", viewAllPremises);
+premisesRouter.get("/", authenticate, viewAllPremises);
 
 // View member premises/memberid
-premisesRouter.get("/:id", viewMemberPremises);
+premisesRouter.get("/:id", authenticate,viewMemberPremises);
 
 // Update premise/
-premisesRouter.put("/", updatePremise);
+premisesRouter.put("/", authenticate,updatePremise);
 
 
 
