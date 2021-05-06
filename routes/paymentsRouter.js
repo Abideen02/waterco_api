@@ -8,10 +8,10 @@ const paymentsRouter = express.Router();
 paymentsRouter.post("/", authenticate,capayment);
 
 //View all Payment
-paymentsRouter.get("/", authenticate,viewAllPayment);
+paymentsRouter.get("/", authenticate, viewAllPayment);
 
 // //view payment by premise
-paymentsRouter.get("/", authenticate ,paymentPremise);
+paymentsRouter.get("/",authenticate, paymentPremise);
 
 export default paymentsRouter;
 

@@ -5,19 +5,19 @@ import { authenticate } from '../middlewares/auth.js';
 const membersRouter = express.Router();
 
 //Add a Member
-membersRouter.post("/", authenticate,addMember);
+membersRouter.post("/",authenticate,addMember);
 
 //View a member members/:id
-membersRouter.get("/:id", authenticate,viewMember);
+membersRouter.get("/:id",authenticate, viewMember);
 
 //View all members members/
 membersRouter.get("/", authenticate,viewAllMembers);
 
 // //Update member record members/
-membersRouter.put("/", authenticate,updateMember);
+membersRouter.put("/",authenticate, updateMember);
 
 //Delete a member members/:id
-membersRouter.delete("/:id", authenticate ,deleteMember);
+membersRouter.delete("/:id", authenticate,deleteMember);
 
 export default membersRouter;
 
