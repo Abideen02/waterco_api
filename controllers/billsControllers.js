@@ -50,3 +50,28 @@ export async function viewbill(req, res) {
         })
     }
 }
+
+// view bill
+export async function viewAllBills(req, res) {
+    try {
+        let allBills = await Bill.findAll();
+        if (allBills) {
+            res.json({
+                success: true,
+                message: 'Bill records retrieved successfully',
+                data: allBills
+            })
+        } else {
+            res.json({
+                success: true,
+                message: 'No bill records found.',
+            })
+        }
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({
+            success: false,
+            message: "Oopss! Something is wrong..."
+        })
+    }
+}

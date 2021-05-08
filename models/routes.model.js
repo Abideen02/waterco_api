@@ -11,7 +11,8 @@ const Route = sequelize.define('routes', {
     route_name: {
         type: Sequelize.STRING(255),
         allowNull: false
-    },
+    }}, 
+    {
     sequelize,
     tableName: 'routes',
     timestamps: false,

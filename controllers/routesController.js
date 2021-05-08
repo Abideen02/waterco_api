@@ -76,13 +76,52 @@ export async function viewAllroutes(req, res) {
 }
 
 //Update route record
-export function updateroute(req, res) {
-    console.log(req.body);
-    res.send(req.body)
+export async function updateroute(req, res) {
+    try {
+        let allusers = await User.findAll();
+        if (allusers) {
+            res.json({
+                success: true,
+                message: 'user records retrieved successfully',
+                data: allusers
+            })
+        } else {
+            res.json({
+                success: true,
+                message: 'No Member records found.',
+            })
+        }
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({
+            success: false,
+            message: "Oopss! Something is wrong..."
+        })
+    }
 }
 
 //Delete a route
-export function deleteroute(req, res) {
-    console.log(req.body);
-    res.send(req.body)
+export async function deleteroute(req, res) {
+    try {
+        let user = await User.findAll();
+        if (user) {
+            res.status(200).json({
+                success: true,
+                message: 'Member records was successfully deleted',
+                data: user
+            })
+        } else {
+            res.json({
+                success: true,
+                message: 'Member was not found.',
+            })
+        }
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({
+            success: false,
+            message: "Oopss! Something is wrong..."
+        })
+    }
 }
+  

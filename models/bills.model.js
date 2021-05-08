@@ -7,7 +7,7 @@ const Bill = sequelize.define('bills', {
         type: Sequelize.INTEGER,
         allowNull: true,
         primaryKey: true
-    },
+    },  
     premise_id: {
         type: Sequelize.INTEGER,
         allowNull: false

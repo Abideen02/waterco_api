@@ -1,6 +1,6 @@
 import express from "express";
-import { capturebill, viewbill} from '../controllers/billsControllers.js'
-// import { authenticate } from '../middlewares/auth.js';
+import { capturebill, viewbill,viewAllBills} from '../controllers/billsControllers.js'
+import { authenticate } from '../middlewares/auth.js';
 
 const billsRouter = express.Router();
 
@@ -8,7 +8,11 @@ const billsRouter = express.Router();
 billsRouter.post("/",  capturebill);
 
 //View a bill/:id - Authenticate.
-billsRouter.get("/:id",  viewbill);
+billsRouter.get("/:id", viewbill);
+
+billsRouter.get("/", viewAllBills);
+
+
 
 
 

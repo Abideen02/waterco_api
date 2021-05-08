@@ -12,7 +12,7 @@ const User = sequelize.define('users', {
         type: Sequelize.STRING(255),
         allowNull: false
     },
-    email_address: {
+    email_address: { 
         type: Sequelize.STRING(255),
         allowNull: false
     },

@@ -6,19 +6,19 @@ import { authenticate } from "../middlewares/auth.js";
 const routesRouter = express.Router();
 
 //Add a route
-routesRouter.post("/", authenticate, addroute);
+routesRouter.post("/",addroute);
 
 //View a route routes/:id
-routesRouter.get("/:id", authenticate, viewroute);
+routesRouter.get("/:id",viewroute);
 
-//View all routes routes/
-routesRouter.get("/", authenticate, viewAllroutes);
+//View all routes routes/ 
+routesRouter.get("/", viewAllroutes);
 
 //Update a route routes/
-routesRouter.put("/", authenticate, updateroute);
+routesRouter.put("/",updateroute);
 
 //Delete a route routes/:id
-routesRouter.delete("/:id", authenticate, deleteroute);
+routesRouter.delete("/:id", deleteroute);
 // view premises on route/
 
 export default routesRouter;

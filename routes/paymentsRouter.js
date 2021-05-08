@@ -5,13 +5,13 @@ import { authenticate } from '../middlewares/auth.js';
 const paymentsRouter = express.Router();
 
 //Capture Payment
-paymentsRouter.post("/", authenticate,capayment);
+paymentsRouter.post("/",capayment);
 
 //View all Payment
-paymentsRouter.get("/", authenticate, viewAllPayment);
+paymentsRouter.get("/",viewAllPayment);
 
 // //view payment by premise
-paymentsRouter.get("/",authenticate, paymentPremise);
+paymentsRouter.get("/",paymentPremise);
 
 export default paymentsRouter;
 
