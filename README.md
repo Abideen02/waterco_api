@@ -1,1 +1,1 @@
-# waterco_api
+# Eseential waters API
